@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Gizlilik Politikası | Son 3 Atış</title>
+  <meta name="description" content="Son 3 Atış balıkçılık uygulaması için Gizlilik Politikası." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gizlilik Politikası | Son 3 Atış" />
+  <meta property="og:description" content="Veri işleme, izinler, paylaşım ve kullanıcı hakları." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="icon.png" />
+  <link rel="icon" href="icon.png" type="image/png" />
+
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --card: #101a2b;
+      --text: #e8ecf3;
+      --muted: #aab4c6;
+      --border: rgba(255, 255, 255, .10);
+      --accent: #3b82f6;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6fb;
+        --card: #ffffff;
+        --text: #0f1b2d;
+        --muted: #4b5563;
+        --border: rgba(15, 27, 45, .12);
+        --accent: #2563eb;
+        --shadow: 0 10px 30px rgba(2, 6, 23, .10);
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(59, 130, 246, .22), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(15, 27, 45, .45), transparent 45%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    nav.tabs {
+      display: flex;
+      gap: 6px;
+      padding: 6px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      width: fit-content;
+    }
+
+    nav.tabs a {
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    nav.tabs a:hover {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    nav.tabs a.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 18px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+
+    .title p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card {
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 94%, transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 15px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 8px 0 0 18px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .hl {
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--accent) 18%, transparent);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      filter: brightness(1.05);
+    }
+
+    footer {
+      margin-top: 16px;
+      padding: 16px 4px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <nav class="tabs" aria-label="Sayfalar">
+      <a href="./support.html">Tanıtım &amp; Destek</a>
+      <a href="./index.html" class="active" aria-current="page">Gizlilik Politikası</a>
+    </nav>
+
+    <header>
+      <div class="icon" aria-label="Uygulama ikonu">
+        <img src="icon.png" alt="Son 3 Atış Logo"
+          onerror="this.style.display='none'; this.parentElement.style.background='transparent';" />
+      </div>
+      <div class="title">
+        <h1>Gizlilik Politikası</h1>
+        <p>Son 3 Atış — Balıkçı Asistanı</p>
+
+        <div class="meta">
+          <span class="pill"><span class="dot"></span> Son güncelleme: <strong>16.09.2026</strong></span>
+          <span class="pill">Geliştirici: <strong>EO LABS</strong></span>
+          <span class="pill">İletişim: <a href="mailto:eolabs.dev@gmail.com">eolabs.dev@gmail.com</a></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="card">
+      <h2>1. Kapsam</h2>
+      <p>
+        <strong>Son 3 Atış</strong>, balıkçıların av deneyimini planlamasına, kaydetmesine ve yönetmesine yardımcı
+        olan bir mobil uygulamadır: hava, rüzgâr, dalga ve basınç verilerinden hesaplanan av uygunluk skoru, harita
+        üzerinde av noktaları, av defteri, fotoğraftan yapay zekâ ile balık tanıma, balık türleri rehberi ile
+        çanta/ekipman yönetimi sunar.
+      </p>
+      <p>
+        Bu politika, uygulamayı kullanırken hangi verilerin işlendiğini, bu verilerin neden ve nasıl kullanıldığını
+        ve haklarınızı açıklar. Kişisel verileriniz 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve ilgili
+        mevzuata uygun olarak işlenir.
+      </p>
+
+      <h3>2. Topladığımız Veriler</h3>
+      <ul>
+        <li><strong>Hesap bilgileri:</strong> E-posta adresi, ad ve varsa profil fotoğrafı. Hesap; e-posta/şifre,
+          Google veya Apple ile oturum açma yoluyla oluşturulur (Firebase Authentication).</li>
+        <li><strong>Konum (isteğe bağlı):</strong> Bulunduğunuz konum ya da seçtiğiniz il/ilçe, size doğru hava ve
+          av uygunluk verilerini göstermek ve av noktalarınızı kaydetmek için kullanılır. Anlık konumunuz arka
+          planda takip edilmez; yalnızca sizin kaydettiğiniz av noktalarının koordinatları hesabınıza bağlı olarak
+          saklanır.</li>
+        <li><strong>Uygulama içeriğiniz:</strong> Av kayıtları, av noktaları, nokta analizleri, taranan balıklar,
+          çanta/ekipman listeleri, alışveriş listesi ve av alarmları hesabınıza bağlı olarak bulutta (Google Cloud
+          Firestore) saklanır ve cihazlarınız arasında senkronize edilir.</li>
+        <li><strong>Fotoğraflar:</strong> Av kayıtlarına, balıklara ve çanta malzemelerine eklediğiniz fotoğraflar
+          <strong>yalnızca cihazınızda</strong> saklanır; buluta yüklenmez. Balık tanıma özelliğinde seçtiğiniz
+          fotoğraf, yalnızca analiz amacıyla yapay zekâ servisimize iletilir ve analiz dışında bir amaçla
+          kullanılmaz.</li>
+        <li><strong>Abonelik bilgisi:</strong> Ücretli özellikler için abonelik durumunuz (plan, başlangıç/bitiş
+          tarihi, mağaza) işlenir. Ödeme ve kart bilgileriniz uygulamaya ulaşmaz; ödemeler App Store / Google Play
+          üzerinden alınır ve abonelik yönetimi için Adapty altyapısı kullanılır.</li>
+        <li><strong>Bildirimler:</strong> Kurduğunuz av alarmları cihazınızda yerel bildirim olarak çalışır. Anlık
+          bildirimler için cihazınıza ait bir bildirim kimliği (push token) işlenir.</li>
+        <li><strong>Kullanım verileri ve hata günlükleri:</strong> Firebase Analytics ile temel kullanım
+          istatistikleri; Firebase Crashlytics ile çökme/hata bilgileri (cihaz modeli, işletim sistemi sürümü,
+          uygulama sürümü vb.).</li>
+        <li><strong>Cihaz tercihleri:</strong> Tema, dil ve bildirim ayarları yalnızca cihazınızda tutulur.</li>
+      </ul>
+      <p class="hl">
+        Sağlık, finans veya kimlik belgesi gibi hassas veriler <strong>toplanmaz</strong>. Kişisel veriler
+        pazarlama amacıyla <strong>satılmaz</strong>.
+      </p>
+
+      <h3>3. Kullanım Amaçları</h3>
+      <ul>
+        <li>Hesabınızı oluşturmak, yönetmek ve verilerinizi cihazlar arasında senkronize etmek</li>
+        <li>Bulunduğunuz konuma göre hava ve av uygunluk verilerini sunmak</li>
+        <li>Av kayıtlarınızı, noktalarınızı ve ekipmanınızı saklamak ve göstermek</li>
+        <li>Fotoğraftan balık türü tanıma ve av noktası analizi gibi yapay zekâ destekli özellikleri sunmak</li>
+        <li>Abonelik hakkınızı doğrulamak ve ücretli özellikleri açmak</li>
+        <li>Kurduğunuz alarm ve hatırlatıcıları bildirim olarak iletmek</li>
+        <li>Performans ve kararlılık analizi, teknik sorunların giderilmesi ve ürün iyileştirmeleri</li>
+      </ul>
+
+      <h3>4. Paylaşım ve Üçüncü Taraf Hizmetleri</h3>
+      <p>
+        Verileriniz yalnızca hizmetin sunulması için gerekli ölçüde aşağıdaki hizmet sağlayıcılarla paylaşılır. Bu
+        sağlayıcıların kendi gizlilik politikaları geçerlidir:
+      </p>
+      <ul>
+        <li><strong>Google Firebase:</strong> Kimlik doğrulama, veritabanı (Firestore), rehber görselleri
+          (Storage), anlık bildirim (Cloud Messaging), uzaktan yapılandırma, Analytics ve Crashlytics</li>
+        <li><strong>Google ve Apple:</strong> Google / Apple ile oturum açma</li>
+        <li><strong>Adapty:</strong> Abonelik ve satın alma yönetimi</li>
+        <li><strong>Harita altyapısı:</strong> Mapbox ve/veya Google Maps</li>
+        <li><strong>Hava ve deniz verisi sağlayıcıları:</strong> Hava tahmini, rüzgâr, dalga ve basınç verileri</li>
+        <li><strong>Yapay zekâ servisi:</strong> Balık tanıma, tarif önerileri ve av noktası analizi</li>
+      </ul>
+
+      <h3>5. Saklama ve Güvenlik</h3>
+      <p>
+        Hesabınıza bağlı veriler, hesabınız açık olduğu sürece ve yasal saklama yükümlülükleri kapsamında saklanır.
+        Hesabınızı sildiğinizde ilişkili verileriniz kalıcı olarak silinir. Hata ve kullanım verileri meşru
+        amaçlar için makul sürelerle saklanır; gerektiğinde anonimleştirilir veya silinir. Verilerinizi yetkisiz
+        erişime karşı korumak için makul teknik ve idari tedbirler alınır.
+      </p>
+
+      <h3>6. Haklarınız (KVKK)</h3>
+      <p>
+        KVKK kapsamında; kişisel verilerinizin işlenip işlenmediğini öğrenme, verilerinize erişme, düzeltilmesini
+        veya silinmesini isteme ve işlemeye itiraz etme haklarına sahipsiniz.
+      </p>
+      <p class="hl">
+        Hesabınızı ve ilişkili tüm verilerinizi uygulama içindeki <strong>Profil › Hesabımı Sil</strong> seçeneğiyle
+        dilediğiniz zaman kalıcı olarak silebilirsiniz. Bu işlem geri alınamaz.
+      </p>
+
+      <h3>7. İzinler ve Kullanıcı Tercihleri</h3>
+      <ul>
+        <li><strong>Konum:</strong> İsteğe bağlıdır; il/ilçe seçerek de kullanabilirsiniz. İzni cihaz ayarlarından
+          yönetebilirsiniz; kapatıldığında konuma bağlı özellikler sınırlı çalışabilir.</li>
+        <li><strong>Kamera ve galeri:</strong> Yalnızca fotoğraf eklemek ve balık tanıma için, siz tetiklediğinizde
+          kullanılır.</li>
+        <li><strong>Bildirimler:</strong> Uygulama içindeki Ayarlar › Bildirimler bölümünden ve cihaz ayarlarından
+          yönetebilirsiniz.</li>
+      </ul>
+
+      <h3>8. Çocukların Gizliliği</h3>
+      <p>Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bu yaş grubundan bilerek kişisel veri toplanmaz.</p>
+
+      <h3>9. Değişiklikler</h3>
+      <p>
+        Bu politika zaman zaman güncellenebilir. Güncel sürüm bu sayfada yayımlanır; önemli değişikliklerde
+        uygulama üzerinden bilgilendirme yapılır ve güncelleme tarihi yenilenir.
+      </p>
+
+      <h3>10. İletişim</h3>
+      <p>
+        Gizlilikle ilgili soru ve talepleriniz için: <a class="btn"
+          href="mailto:eolabs.dev@gmail.com?subject=Gizlilik%20Politikasi%20-%20Son%203%20Atis">eolabs.dev@gmail.com</a>
+      </p>
+
+      <p class="small">
+        Destek sayfasına dönmek istersen: <a href="./support.html">Tanıtım &amp; Destek</a>
+      </p>
+    </main>
+
+    <footer>
+      © <span id="yil"></span> EO LABS • Son 3 Atış
+      <div class="small">Bu sayfa App Store ve Play Store kullanıcı desteği için hazırlanmıştır.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("yil").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

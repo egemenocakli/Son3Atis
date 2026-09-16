@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Destek | Son 3 Atış</title>
+  <meta name="description"
+    content="Son 3 Atış balıkçılık uygulaması — tanıtım, özellikler, destek, sık sorulan sorular ve iletişim." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Destek | Son 3 Atış" />
+  <meta property="og:description" content="Hava, av noktaları, av defteri, balık tanıma ve çanta yönetimi tek uygulamada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="icon.png" />
+  <link rel="icon" href="icon.png" type="image/png" />
+
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --card: #101a2b;
+      --text: #e8ecf3;
+      --muted: #aab4c6;
+      --border: rgba(255, 255, 255, .10);
+      --accent: #3b82f6;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6fb;
+        --card: #ffffff;
+        --text: #0f1b2d;
+        --muted: #4b5563;
+        --border: rgba(15, 27, 45, .12);
+        --accent: #2563eb;
+        --shadow: 0 10px 30px rgba(2, 6, 23, .10);
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(59, 130, 246, .22), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(15, 27, 45, .45), transparent 45%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    nav.tabs {
+      display: flex;
+      gap: 6px;
+      padding: 6px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      width: fit-content;
+    }
+
+    nav.tabs a {
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    nav.tabs a:hover {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    nav.tabs a.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 18px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+
+    .title p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 94%, transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 15px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 18px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, .03);
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent);
+    }
+
+    .hl {
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--accent) 18%, transparent);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      filter: brightness(1.05);
+    }
+
+    footer {
+      margin-top: 16px;
+      padding: 16px 4px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <nav class="tabs" aria-label="Sayfalar">
+      <a href="./support.html" class="active" aria-current="page">Tanıtım &amp; Destek</a>
+      <a href="./index.html">Gizlilik Politikası</a>
+    </nav>
+
+    <header>
+      <div class="icon" aria-label="Uygulama ikonu">
+        <img src="icon.png" alt="Son 3 Atış Logo"
+          onerror="this.style.display='none'; this.parentElement.style.background='transparent';" />
+      </div>
+      <div class="title">
+        <h1>Son 3 Atış — Balıkçı Asistanı</h1>
+        <p>Tanıtım • Destek • İletişim • Sık Sorulan Sorular • Gizlilik</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Sol sütun -->
+      <main class="card">
+        <h2>Uygulama Hakkında</h2>
+        <p>
+          <strong>Son 3 Atış</strong>, balıkçıların av deneyimini planlamasına, kaydetmesine ve yönetmesine yardımcı
+          olan bir balıkçı asistanıdır. Hava, av noktaları, av defteri, yapay zekâ destekli balık tanıma ve ekipman
+          yönetimi tek uygulamada toplanır; "Bugün ava çıkmalı mıyım?", "Bu balık hangi tür?", "Geçen sefer nerede,
+          ne tutmuştum?" gibi soruları saniyeler içinde yanıtlar.
+        </p>
+        <p class="muted">
+          Sade tasarımı, harita görünümü ve konuma göre hesaplanan av uygunluk skoruyla bir sonraki avınız için her
+          şey elinizin altında.
+        </p>
+
+        <h3>Öne Çıkan Özellikler</h3>
+        <div>
+          <span class="badge"><span class="dot"></span> Av uygunluk skoru</span>
+          <span class="badge"><span class="dot"></span> Rüzgar, dalga &amp; basınç</span>
+          <span class="badge"><span class="dot"></span> Harita &amp; av noktaları</span>
+          <span class="badge"><span class="dot"></span> Av defteri &amp; istatistik</span>
+          <span class="badge"><span class="dot"></span> Fotoğraftan balık tanıma</span>
+          <span class="badge"><span class="dot"></span> Balık türleri rehberi</span>
+          <span class="badge"><span class="dot"></span> Çanta &amp; ekipman</span>
+          <span class="badge"><span class="dot"></span> Av alarmları</span>
+          <span class="badge"><span class="dot"></span> Karanlık / aydınlık tema</span>
+        </div>
+
+        <ul>
+          <li><strong>Doğru zamanı yakala:</strong> Rüzgâr, dalga, basınç ve hava durumundan hesaplanan av uygunluk
+            skoruyla en verimli anı seçin.</li>
+          <li><strong>Av noktaları:</strong> Noktalarınızı haritada kaydedin, favorileyin ve yapay zekâ ile nokta
+            analizi alın.</li>
+          <li><strong>Av defteri:</strong> Her seansı tarih, konum, tutulan balıklar ve fotoğraflarla kaydedin;
+            geçmişinizi ve istatistiklerinizi görün.</li>
+          <li><strong>Balığını anında tanı:</strong> Fotoğrafını çekin, yapay zekâ türünü tanısın; boyut/ağırlık
+            tahmini ve pişirme ipuçları önünüze gelsin.</li>
+          <li><strong>Çantan ava hazır olsun:</strong> Olta, yem, misina ve aksesuarlarınızı tek yerde düzenleyin,
+            eksiklerinizi alışveriş listesine ekleyin.</li>
+          <li><strong>Av alarmları:</strong> Ava çıkacağınız zaman için hatırlatıcı kurun, cihazınız sizi uyarsın.</li>
+        </ul>
+
+        <h3>Nasıl Çalışır?</h3>
+        <ol>
+          <li>Hesap oluşturun (e-posta, Google veya Apple ile).</li>
+          <li>Konum izni verin ya da il/ilçenizi seçin.</li>
+          <li>Ana sayfada günün av uygunluk skorunu ve hava detaylarını inceleyin.</li>
+          <li>Haritadan av noktanızı kaydedin, seansınızı av defterine işleyin.</li>
+          <li>Tuttuğunuz balığın fotoğrafını çekip türünü tanıtın; çantanızı bir sonraki ava hazırlayın.</li>
+        </ol>
+
+        <h3>Abonelik</h3>
+        <p class="muted">
+          Uygulamanın bazı özellikleri ücretli abonelik kapsamında sunulur. Abonelik ücretleri, süresi ve yenileme
+          koşulları satın alma sırasında App Store / Google Play üzerinden gösterilir; ödeme, iptal ve iade
+          işlemleri ilgili mağazanın kurallarına tabidir. Aboneliğinizi cihazınızın mağaza hesabı ayarlarından
+          yönetebilirsiniz.
+        </p>
+
+        <h3>Gizlilik, Güvenlik ve İzinler</h3>
+        <p class="hl">
+          <strong>Konum izni isteğe bağlıdır.</strong> Konum yalnızca size doğru hava/av verilerini göstermek ve av
+          noktalarınızı kaydetmek için kullanılır; arka planda takip edilmez. <strong>Fotoğraflarınız yalnızca
+            cihazınızda</strong> saklanır, buluta yüklenmez.
+        </p>
+        <p class="muted">
+          Av kayıtlarınız, noktalarınız ve ekipmanınız hesabınıza bağlı olarak bulutta saklanır ve cihazlarınız
+          arasında senkronize edilir. Uygulamanın kararlılığını artırmak için <strong>Firebase Crashlytics</strong>
+          ve temel <strong>Analytics</strong> kullanılır. Kişisel veriler satılmaz.
+        </p>
+
+        <a class="btn" href="./index.html">
+          Gizlilik Politikasını Görüntüle
+        </a>
+
+        <h3>Bilgilendirme ve Sorumluluk Reddi</h3>
+        <ul>
+          <li>Hava tahminleri, av uygunluk skoru ve benzeri veriler üçüncü taraf kaynaklardan derlenen tahminî
+            bilgilerdir; hata payı içerebilir ve denize/suya çıkma kararınız için tek dayanak olmamalıdır.</li>
+          <li>Can ve mal güvenliğiniz için resmî meteoroloji ve deniz otoritelerinin uyarılarını esas alınız.</li>
+          <li>Yapay zekâ ile balık tanıma ve nokta analizi sonuçları tahminîdir; kesinlik garantisi vermez.</li>
+          <li>Avlanma yasakları, kota, boy sınırları ve ruhsat gibi tüm yasal düzenlemelere uymak kullanıcının
+            sorumluluğundadır.</li>
+          <li>Acil durumlarda 112 Acil Çağrı ve 158 Sahil Güvenlik gibi resmî yardım kanallarına başvurunuz.</li>
+        </ul>
+      </main>
+
+      <!-- Sağ sütun -->
+      <aside class="card">
+        <h2>Destek &amp; İletişim</h2>
+        <p class="muted">Geri bildiriminiz uygulamanın gelişimi için çok değerli.</p>
+
+        <h3>E-posta</h3>
+        <p>
+          <a class="btn" href="mailto:eolabs.dev@gmail.com?subject=Son%203%20Atis%20-%20Destek">
+            eolabs.dev@gmail.com
+          </a>
+        </p>
+        <p class="small">
+          Lütfen e-postanıza mümkünse şu bilgileri ekleyin: cihaz modeli, iOS/Android sürümü, uygulama sürümü ve
+          hata adımları.
+        </p>
+
+        <h3>Sık Sorulan Sorular</h3>
+        <p><strong>Konum izni zorunlu mu?</strong><br /><span class="muted">Hayır. İl/ilçe seçerek de
+            kullanabilirsiniz; izin verirseniz veriler bulunduğunuz konuma göre gelir.</span></p>
+        <p><strong>Fotoğraflarım buluta yükleniyor mu?</strong><br /><span class="muted">Hayır. Av ve ekipman
+            fotoğrafları yalnızca cihazınızda saklanır. Balık tanıma için seçtiğiniz fotoğraf sadece analiz amacıyla
+            iletilir.</span></p>
+        <p><strong>Balık tanıma sonucu kesin mi?</strong><br /><span class="muted">Hayır. Yapay zekâ tahmini bir
+            sonuç üretir; güven oranı gösterilir, kesin tür tespiti garanti edilmez.</span></p>
+        <p><strong>Hesabımı nasıl silerim?</strong><br /><span class="muted">Uygulama içinde Profil › Hesabımı Sil.
+            Hesabınız ve tüm verileriniz kalıcı olarak silinir; işlem geri alınamaz.</span></p>
+        <p><strong>Aboneliğimi nasıl iptal ederim?</strong><br /><span class="muted">App Store veya Google Play
+            hesabınızın abonelik ayarlarından; iptal ve iade mağaza kurallarına tabidir.</span></p>
+        <p><strong>Alarm neden çalmadı?</strong><br /><span class="muted">Ayarlar › Bildirimler altındaki "Tüm
+            Bildirimler" ve "Av Alarmları" seçeneklerinin açık olduğundan ve cihaz bildirim izninin verildiğinden
+            emin olun.</span></p>
+
+        <h3>Bağlantılar</h3>
+        <ul>
+          <li><a href="./index.html">Gizlilik Politikası</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="yil"></span> EO LABS • Son 3 Atış
+      <div class="small">Bu sayfa App Store ve Play Store kullanıcı desteği için hazırlanmıştır.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("yil").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
