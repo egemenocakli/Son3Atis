@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Hesap Silme | Son 3 Atış</title>
+  <meta name="description" content="Son 3 Atış hesabınızı ve verilerinizi nasıl sileceğiniz." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gizlilik Politikası | Son 3 Atış" />
+  <meta property="og:description" content="Veri işleme, izinler, paylaşım ve kullanıcı hakları." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="icon.png" />
+  <link rel="icon" href="icon.png" type="image/png" />
+
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --card: #101a2b;
+      --text: #e8ecf3;
+      --muted: #aab4c6;
+      --border: rgba(255, 255, 255, .10);
+      --accent: #3b82f6;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6fb;
+        --card: #ffffff;
+        --text: #0f1b2d;
+        --muted: #4b5563;
+        --border: rgba(15, 27, 45, .12);
+        --accent: #2563eb;
+        --shadow: 0 10px 30px rgba(2, 6, 23, .10);
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(59, 130, 246, .22), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(15, 27, 45, .45), transparent 45%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    nav.tabs {
+      display: flex;
+      gap: 6px;
+      padding: 6px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      width: fit-content;
+    }
+
+    nav.tabs a {
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    nav.tabs a:hover {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    nav.tabs a.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 18px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+
+    .title p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card {
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 94%, transparent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 15px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 18px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .hl {
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--accent) 18%, transparent);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      filter: brightness(1.05);
+    }
+
+    footer {
+      margin-top: 16px;
+      padding: 16px 4px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <nav class="tabs" aria-label="Sayfalar">
+      <a href="./support.html">Tanıtım &amp; Destek</a>
+      <a href="./index.html">Gizlilik Politikası</a>
+      <a href="./delete-account.html" class="active" aria-current="page">Hesap Silme</a>
+    </nav>
+
+    <header>
+      <div class="icon" aria-label="Uygulama ikonu">
+        <img src="icon.png" alt="Son 3 Atış Logo"
+          onerror="this.style.display='none'; this.parentElement.style.background='transparent';" />
+      </div>
+      <div class="title">
+        <h1>Hesap ve Veri Silme</h1>
+        <p>Son 3 Atış — Balıkçı Asistanı</p>
+
+        <div class="meta">
+          <span class="pill"><span class="dot"></span> Son güncelleme: <strong>16.09.2026</strong></span>
+          <span class="pill">Geliştirici: <strong>EO LABS</strong></span>
+          <span class="pill">İletişim: <a href="mailto:eolabs.dev@gmail.com">eolabs.dev@gmail.com</a></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="card">
+      <h2>Hesabınızı Nasıl Silersiniz?</h2>
+      <p>
+        <strong>Son 3 Atış</strong> (geliştirici: <strong>EO LABS</strong>) hesabınızı ve hesabınıza bağlı tüm
+        verilerinizi dilediğiniz zaman, uygulama içinden kendiniz silebilirsiniz. Ek bir onay ya da bizimle
+        yazışma gerekmez.
+      </p>
+
+      <h3>1. Uygulama içinden silme (önerilen)</h3>
+      <ol>
+        <li>Son 3 Atış uygulamasını açın ve hesabınızla oturum açın.</li>
+        <li>Alt menüden <strong>Profil</strong> sekmesine gidin.</li>
+        <li>Sayfanın altındaki <strong>Hesabımı Sil</strong> seçeneğine dokunun.</li>
+        <li>Onay penceresinde <strong>Hesabı Sil</strong>'e dokunun. İşlem geri alınamaz.</li>
+      </ol>
+      <p class="small">
+        Güvenlik nedeniyle uzun süredir oturum açmadıysanız uygulama sizden çıkış yapıp yeniden giriş
+        yapmanızı isteyebilir; ardından adımları tekrarlayın.
+      </p>
+
+      <h3>2. E-posta ile silme talebi</h3>
+      <p>
+        Uygulamaya erişemiyorsanız (örneğin cihazınızı kaybettiyseniz) hesabınıza kayıtlı e-posta adresinden
+        <a class="btn" href="mailto:eolabs.dev@gmail.com?subject=Hesap%20Silme%20Talebi%20-%20Son%203%20Atis">eolabs.dev@gmail.com</a>
+        adresine "Hesap Silme Talebi" konulu bir e-posta gönderin. Talebiniz kimlik doğrulaması sonrası en geç
+        <strong>30 gün</strong> içinde yerine getirilir ve size bilgi verilir.
+      </p>
+
+      <h3>Silinen Veriler</h3>
+      <p>Hesap silindiğinde aşağıdaki veriler <strong>anında ve kalıcı olarak</strong> silinir:</p>
+      <ul>
+        <li><strong>Hesap bilgileri:</strong> e-posta adresi, ad, profil fotoğrafı bağlantısı ve oturum açma
+          kaydı (Firebase Authentication).</li>
+        <li><strong>Uygulama içeriğiniz:</strong> av kayıtları, av noktaları, nokta analizleri, taranan balıklar,
+          çanta/ekipman listeleri, alışveriş listesi, av alarmları ve hatırlatıcılar.</li>
+        <li><strong>Profil ve abonelik kaydı:</strong> üyelik/deneme durumunuza ait profil dokümanı.</li>
+        <li><strong>Bildirim kimliği:</strong> cihazınıza ait push token hesabınızla ilişkilendirilmez ve oturum
+          kapanınca geçersiz olur.</li>
+      </ul>
+
+      <h3>Saklanan Veriler ve Süreleri</h3>
+      <ul>
+        <li><strong>Cihazınızdaki fotoğraflar:</strong> Av kayıtlarına ve çanta malzemelerine eklediğiniz
+          fotoğraflar yalnızca cihazınızda saklanır, hiçbir zaman sunucularımıza yüklenmez. Bunları uygulamayı
+          kaldırarak temizleyebilirsiniz.</li>
+        <li><strong>Anonim kilitlenme ve kullanım verileri:</strong> Firebase Crashlytics ve Analytics tarafından
+          toplanan, kimliğinizle eşleştirilmeyen teknik veriler ilgili Google saklama politikalarına göre en fazla
+          <strong>90 gün</strong> içinde otomatik olarak silinir.</li>
+        <li><strong>Satın alma kayıtları:</strong> Abonelik ödemelerine ait kayıtlar App Store / Google Play ve
+          Adapty tarafında mağazaların yasal saklama yükümlülükleri süresince tutulur; bu kayıtlar üzerinde
+          kontrolümüz yoktur. Aktif aboneliğinizi mağaza hesabınızdan ayrıca iptal etmeniz gerekir — hesap silmek
+          aboneliği otomatik olarak iptal etmez.</li>
+      </ul>
+
+      <p class="hl">
+        Hesap silme işlemi geri alınamaz. Silinen av kayıtlarınız, noktalarınız ve diğer içerikleriniz
+        <strong>yeniden oluşturulamaz</strong>; aynı e-posta ile yeni bir hesap açmanız halinde eski verileriniz
+        geri gelmez.
+      </p>
+
+      <p class="small">
+        Ayrıntılar için: <a href="./index.html">Gizlilik Politikası</a> ·
+        <a href="./support.html">Tanıtım &amp; Destek</a>
+      </p>
+    </main>
+
+    <footer>
+      © <span id="yil"></span> EO LABS • Son 3 Atış
+      <div class="small">Bu sayfa App Store ve Play Store hesap silme beyanı için hazırlanmıştır.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("yil").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

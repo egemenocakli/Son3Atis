@@ -6,6 +6,7 @@
 |---|---|---|
 | Gizlilik Politikası | `index.html` | Toplanan veriler, kullanım amaçları, üçüncü taraflar, KVKK hakları, izinler |
 | Tanıtım & Destek | `support.html` | Uygulama tanıtımı, özellikler, SSS, sorumluluk reddi, iletişim |
+| Hesap Silme | `delete-account.html` | Uygulama içi silme adımları, silinen/saklanan veriler (Play Console "Hesap silme URL'si" alanı için) |
 
 İki sayfa üstteki sekme çubuğuyla birbirine bağlıdır. Bağımlılık yoktur; tüm stil dosya içindedir. Sistem temasına göre karanlık/aydınlık görünür.
 
@@ -16,9 +17,9 @@
 3. Birkaç dakika sonra site şu adreslerde yayında olur:
    - Gizlilik: `https://<kullanıcı>.github.io/<repo>/`
    - Destek: `https://<kullanıcı>.github.io/<repo>/support.html`
+   - Hesap silme: `https://<kullanıcı>.github.io/<repo>/delete-account.html`
 
-Mağaza formlarında **Privacy Policy URL** alanına ilk, **Support URL** alanına ikinci bağlantıyı verin.
-
+Mağaza formlarında **Privacy Policy URL** alanına ilk, **Support URL** alanına ikinci, Play Console › Veri güvenliği › **Hesap silme URL'si** alanına üçüncü bağlantıyı verin.
 
 ## Güncelleme
 
