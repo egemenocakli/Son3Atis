@@ -19,6 +19,7 @@
 
 Mağaza formlarında **Privacy Policy URL** alanına ilk, **Support URL** alanına ikinci bağlantıyı verin.
 
+
 ## Güncelleme
 
 - Politika metni değişince `index.html` içindeki **Son güncelleme** tarihini elle güncelleyin (sabit yazılıdır, otomatik değişmez).
